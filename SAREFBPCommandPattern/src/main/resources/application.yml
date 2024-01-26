@@ -1,0 +1,6 @@
+events:
+  broker:
+    type: rabbitmq
+    host: 172.23.180.9
+    user: iotmicroservice
+    password: iot

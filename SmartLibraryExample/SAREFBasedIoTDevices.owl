@@ -1,0 +1,3709 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://w3id.org/saref"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://w3id.org/saref">
+    <Prefix name="" IRI="https://w3id.org/saref"/>
+    <Prefix name="om" IRI="http://www.wurvoc.org/vocabularies/om-1.8/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
+    <Prefix name="saref" IRI="https://w3id.org/saref#"/>
+    <Prefix name="schema" IRI="http://schema.org/"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Import>http://www.w3.org/2006/time</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:contributor"/>
+        <IRI>http://purl.org/net/mpoveda</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:contributor"/>
+        <IRI>http://www.garcia-castro.com/foaf.rdf#me</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2015-02-10</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <IRI>https://www.linkedin.com/in/lauradaniele</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+        <Literal>The Smart Appliances REFerence (SAREF) ontology is a shared model of consensus that facilitates the matching of existing assets (standards/protocols/datamodels/etc.) in the smart appliances domain. The SAREF ontology provides building blocks that allow separation and recombination of different parts of the ontology depending on specific needs. The starting point of SAREF is the concept of device (e.g., a switch). Devices are tangible objects designed to accomplish a particular task in households, common public buildings or offices. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs the start and stop function. The SAREF ontology offers a lists of basic functions that can be eventually combined in order to have more complex functions in a single device. For example, a switch offers an actuating function of type &apos;switching on/off&apos;. Each function has some associated commands, which can also be picked up as building blocks from a list. For example, the &apos;switching on/off&apos; is associated with the commands &apos;switch on&apos;, &apos;switch off&apos; and &apos;toggle&apos;. Depending on the function(s) it accomplishes, a device can be found in some corresponding states that are also listed as building blocks. When connected to a network, a device offers a service, which  is a representation of a function to a network that makes the function discoverable, registerable and remotely controllable by other devices in the network. A service can represent one or more functions. A service is offered by a device that wants (a certain set of) its function(s) to be discoverable, registerable, remotely controllable by other devices in the network. A service must specify the device that is offering the service and the function(s) to be represented. A device in the SAREF ontology is also characterized by a profile that can be used to optimize some property, such as Energy, in a home or office that are part of a building.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:issued"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2015-04-01</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+        <IRI>http://purl.org/NET/rdflicense/cc-by4.0</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2018-05-02</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:publisher"/>
+        <IRI>https://www.tno.nl</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:source"/>
+        <IRI>http://www.etsi.org/deliver/etsi_ts/103200_103299/103264/02.01.01_60/ts_103264v020101p.pdf</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+        <Literal>SAREF: the Smart Appliances REFerence ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Information about changes compared to version 1.1.1: (1)The classes and properties related to how to represent devices in building spaces (such as the saref:BuildingSpace class,  saref:BuildingObject class and saref:isLocatedIn property) have been removed from SAREF and incorporated  into the SAREF4BLDG extension related to buildings (https://w3id.org/def/saref4bldg), including the reuse of the W3C® WGS84 geo positioning vocabulary; (2)The saref:DeviceCategory and saref:FunctionCategory classes have been removed. Instead, the hierarchy of device categories has been implemented directly as subclasses of the saref:Device class; (3)The information specific for energy efficiency has been moved to the SAREF4ENER extension (https://w3id.org/saref4ener). For example, the saref:Profile class has been redefined to accommodate only the properties that are general enough for any type of profile, not only for energy and power. Details on how to specifically model a power profile can be found in the SAREF4ENER extension (https://w3id.org/saref4ener); (4) The subclasses of the saref:Energy class  have been removed (i.e., Average Energy, Maximum Energy, Minimum Energy, Total Energy, HVAC Energy, Hot Water Energy and Lighting Energy); (5)The saref:Property class has been split into two classes (saref:Property and saref:Measurement), as it is done in the SAREF4ENVI extension (https://w3id.org/def/saref4envi), in order to properly accommodate the distinction between the concept of property (an observable quality of something) and the concept of measurement (a concrete value observed for a property); (6)Too restrictive cardinality restrictions have been revised, sometimes making them optional rather than mandatory (better to make properties mandatory in the extensions that specialize SAREF for a specific purpose, rather than restricting SAREF, whose purpose is more general). For example, definitions of units of measurement using an enumeration (owl:oneOf) were too restrictive because they did not allow using other units than those enumerated. Therefore, the individuals of each class are still there, but the owl:oneOf enumeration has been removed; (7)The saref:UnitOfMeasure subclassesre use individuals from the OM ontology for unit of measures (http://www.wurvoc.org/vocabularies/om-1.6/), but this is not the only solution. It has been clarified in the comments that the OM ontology is an example, but other ontologies can be used; (8)The global restrictions (rdfs:domain and rdfs:range) in object properties have been completely removed not to hinder interoperability. Object properties are now only restricted locally in the classes; (9)The subclasses of saref:Task have been transormed in individuals; (10)The saref:hasTask property has been removed from the saref:Profile class to resolve an ambiguity with the saref:Task class.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Information about changes compared to version 2.1.1: Small version bump to ensure that the turtle-version and the owl-version are up to date.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>2.1.2</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#ActuatingFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actuator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Appliance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BuildingRelated"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CloseCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CloseState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Command"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Commodity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Currency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DoorSwitch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Electricity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Energy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyMeter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyRelated"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Function"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FunctionRelated"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Generator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GetCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GetCurrentMeterValueCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GetMeterDataCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GetMeterHistoryCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GetSensingDataCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HVAC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Humidity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IlluminanceUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LevelControlFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Light"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightSwitch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightingDevice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Load"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Measurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Meter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeteringFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MicroRenewable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Motion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MultiLevelState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Multimedia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NotifyCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Occupancy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OffCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OffState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnOffFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnOffState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OpenCloseFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OpenCloseState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OpenCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OpenState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PauseCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Power"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PowerUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pressure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PressureUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Price"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Profile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Property"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensingFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SetAbsoluteLevelCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SetLevelCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SetRelativeLevelCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Smoke"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmokeSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StartCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StartState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StartStopFunction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StartStopState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StepDownCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StepUpCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StopCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StopState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Storage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Switch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SwitchOnService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Task"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Time"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ToggleCommand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnitOfMeasure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WashingMachine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Water"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#accomplishes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#actsUpon"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#consistsOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#controlsProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCommand"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFunction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMeterReading"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMeterReadingType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProfile"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSensingRange"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSensorType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasState"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasThresholdMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTypicalConsumption"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAbout"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAccomplishedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCommandOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isControlledByDevice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMeasuredByDevice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMeasuredIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOfferedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isUsedFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#makesMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#measuresProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#offers"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relatesToMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relatesToProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#represents"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasModel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTimestamp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:United_States_dollar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:bar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:degree_Celsius"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:degree_Fahrenheit"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:euro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:kelvin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:kilowatt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:kilowatt_hour"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:lux"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:pascal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:pound_sterling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="om:watt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Access_Controller"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Air_Renewal_System"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alarm"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Allow_Access"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CO2_Level"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CO2_Sensor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cleaning"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Close"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Comfort"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Deny_Access"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Detect_Presence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Drying"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EnergyEfficiency"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Entertainment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GetCurrentMeterValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GetMeterData"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GetMeterHistory"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GetSensingData"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Get_CO2_Level"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Level_Sensing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lighting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MeterReading"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Notify"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Off"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#On"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Open"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pause"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Presence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Presence_Detector"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Safety"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SetAbsoluteLevel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SetRelativeLevel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Start"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Start_Notifications"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#StepDown"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#StepUp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Stop"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Stop_Notifications"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Toggle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Turn_OFF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Turn_ON"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Washing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WellBeing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#watt_hour"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:issued"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:publisher"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActuatingFunction"/>
+        <Class IRI="#Function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actuator"/>
+        <Class IRI="#FunctionRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actuator"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#ActuatingFunction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Appliance"/>
+        <Class IRI="#FunctionRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BuildingRelated"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CloseCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CloseCommand"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#actsUpon"/>
+            <Class IRI="#OpenCloseState"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CloseState"/>
+        <Class IRI="#OpenCloseState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coal"/>
+        <Class IRI="#Commodity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Command"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#actsUpon"/>
+            <Class IRI="#State"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Command"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#isCommandOf"/>
+            <Class IRI="#Function"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Command"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#hasDescription"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Commodity"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isMeasuredIn"/>
+            <Class IRI="#UnitOfMeasure"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Currency"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#consistsOf"/>
+            <Class IRI="#Device"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#controlsProperty"/>
+            <Class IRI="#Property"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasProfile"/>
+            <Class IRI="#Profile"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasState"/>
+            <Class IRI="#State"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasTypicalConsumption"/>
+            <ObjectUnionOf>
+                <Class IRI="#Energy"/>
+                <Class IRI="#Power"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isUsedFor"/>
+            <Class IRI="#Commodity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#makesMeasurement"/>
+            <Class IRI="#Measurement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#measuresProperty"/>
+            <Class IRI="#Property"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#offers"/>
+            <Class IRI="#Service"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#accomplishes"/>
+            <Class IRI="#Task"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#Function"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#hasDescription"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#hasManufacturer"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#hasModel"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DoorSwitch"/>
+        <Class IRI="#Switch"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DoorSwitch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#consistsOf"/>
+            <Class IRI="#Switch"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DoorSwitch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#OpenCloseFunction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DoorSwitch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasState"/>
+            <Class IRI="#OpenCloseState"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DoorSwitch"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#Safety"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Electricity"/>
+        <Class IRI="#Commodity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Energy"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyMeter"/>
+        <Class IRI="#Meter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyMeter"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#consistsOf"/>
+            <Class IRI="#Meter"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyMeter"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#measuresProperty"/>
+            <Class IRI="#Energy"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyMeter"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#EnergyEfficiency"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyMeter"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#MeterReading"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyRelated"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyUnit"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventFunction"/>
+        <Class IRI="#Function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCommand"/>
+            <Class IRI="#NotifyCommand"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventFunction"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasThresholdMeasurement"/>
+            <Class IRI="#Measurement"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Function"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasCommand"/>
+            <Class IRI="#Command"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FunctionRelated"/>
+        <Class IRI="#Device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gas"/>
+        <Class IRI="#Commodity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Generator"/>
+        <Class IRI="#EnergyRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GetCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GetCurrentMeterValueCommand"/>
+        <Class IRI="#GetCommand"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GetMeterDataCommand"/>
+        <Class IRI="#GetCommand"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GetMeterHistoryCommand"/>
+        <Class IRI="#GetCommand"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GetSensingDataCommand"/>
+        <Class IRI="#GetCommand"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HVAC"/>
+        <Class IRI="#FunctionRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HVAC"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#Comfort"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Humidity"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IlluminanceUnit"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LevelControlFunction"/>
+        <Class IRI="#ActuatingFunction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LevelControlFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCommand"/>
+            <ObjectUnionOf>
+                <Class IRI="#SetAbsoluteLevelCommand"/>
+                <Class IRI="#SetRelativeLevelCommand"/>
+                <Class IRI="#StepDownCommand"/>
+                <Class IRI="#StepUpCommand"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Light"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightSwitch"/>
+        <Class IRI="#Switch"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightSwitch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#consistsOf"/>
+            <Class IRI="#Switch"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightSwitch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#OnOffFunction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightSwitch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasState"/>
+            <Class IRI="#OnOffState"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightSwitch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#measuresProperty"/>
+            <Class IRI="#Light"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightSwitch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#offers"/>
+            <Class IRI="#SwitchOnService"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightSwitch"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#Lighting"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightingDevice"/>
+        <Class IRI="#FunctionRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightingDevice"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#Comfort"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Load"/>
+        <Class IRI="#EnergyRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measurement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isMeasuredIn"/>
+            <Class IRI="#UnitOfMeasure"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measurement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#relatesToProperty"/>
+            <Class IRI="#Property"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measurement"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isMeasuredIn"/>
+            <Class IRI="#UnitOfMeasure"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measurement"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#relatesToProperty"/>
+            <Class IRI="#Property"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measurement"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasTimestamp"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Measurement"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasValue"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Meter"/>
+        <Class IRI="#FunctionRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Meter"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#MeteringFunction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeteringFunction"/>
+        <Class IRI="#Function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeteringFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCommand"/>
+            <ObjectUnionOf>
+                <Class IRI="#GetCurrentMeterValueCommand"/>
+                <Class IRI="#GetMeterDataCommand"/>
+                <Class IRI="#GetMeterHistoryCommand"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeteringFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasMeterReading"/>
+            <Class IRI="#Measurement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeteringFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasMeterReadingType"/>
+            <ObjectUnionOf>
+                <Class IRI="#Commodity"/>
+                <Class IRI="#Property"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MicroRenewable"/>
+        <Class IRI="#FunctionRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MicroRenewable"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#EnergyEfficiency"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Motion"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultiLevelState"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Multimedia"/>
+        <Class IRI="#FunctionRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Multimedia"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#Entertainment"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Network"/>
+        <Class IRI="#FunctionRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NotifyCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Occupancy"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OffCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OffCommand"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#actsUpon"/>
+            <Class IRI="#OnOffState"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OffState"/>
+        <Class IRI="#OnOffState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnCommand"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#actsUpon"/>
+            <Class IRI="#OnOffState"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnOffFunction"/>
+        <Class IRI="#ActuatingFunction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnOffFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCommand"/>
+            <ObjectUnionOf>
+                <Class IRI="#OffCommand"/>
+                <Class IRI="#OnCommand"/>
+                <Class IRI="#ToggleCommand"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnOffState"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnState"/>
+        <Class IRI="#OnOffState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpenCloseFunction"/>
+        <Class IRI="#ActuatingFunction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpenCloseFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCommand"/>
+            <ObjectUnionOf>
+                <Class IRI="#CloseCommand"/>
+                <Class IRI="#OpenCommand"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpenCloseState"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpenCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpenCommand"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#actsUpon"/>
+            <Class IRI="#OpenCloseState"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpenState"/>
+        <Class IRI="#OpenCloseState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PauseCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Power"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PowerUnit"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pressure"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PressureUnit"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Price"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Profile"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#consistsOf"/>
+            <Class IRI="#Profile"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Profile"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPrice"/>
+            <Class IRI="#Price"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Profile"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasTime"/>
+            <Class IRI="#Time"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Profile"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isAbout"/>
+            <ObjectUnionOf>
+                <Class IRI="#Commodity"/>
+                <Class IRI="#Property"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Property"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isControlledByDevice"/>
+            <Class IRI="#Device"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Property"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isMeasuredByDevice"/>
+            <Class IRI="#Device"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Property"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#relatesToMeasurement"/>
+            <Class IRI="#Measurement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensingFunction"/>
+        <Class IRI="#Function"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensingFunction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSensingRange"/>
+            <Class IRI="#Measurement"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensingFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCommand"/>
+            <Class IRI="#GetSensingDataCommand"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensingFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSensorType"/>
+            <Class IRI="#Property"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#FunctionRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#SensingFunction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Service"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#isOfferedBy"/>
+            <Class IRI="#Device"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Service"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#represents"/>
+            <Class IRI="#Function"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SetAbsoluteLevelCommand"/>
+        <Class IRI="#SetLevelCommand"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SetLevelCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SetLevelCommand"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#actsUpon"/>
+            <Class IRI="#MultiLevelState"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SetRelativeLevelCommand"/>
+        <Class IRI="#SetLevelCommand"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Smoke"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmokeSensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmokeSensor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#consistsOf"/>
+            <Class IRI="#Sensor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmokeSensor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#EventFunction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmokeSensor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#SensingFunction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmokeSensor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#measuresProperty"/>
+            <Class IRI="#Smoke"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmokeSensor"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#Safety"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StartCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StartCommand"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#actsUpon"/>
+            <Class IRI="#StartStopState"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StartState"/>
+        <Class IRI="#StartStopState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StartStopFunction"/>
+        <Class IRI="#ActuatingFunction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StartStopFunction"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCommand"/>
+            <ObjectUnionOf>
+                <Class IRI="#StartCommand"/>
+                <Class IRI="#StopCommand"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StartStopState"/>
+        <Class IRI="#State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StepDownCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StepDownCommand"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#actsUpon"/>
+            <Class IRI="#MultiLevelState"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StepUpCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StepUpCommand"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#actsUpon"/>
+            <Class IRI="#MultiLevelState"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StopCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StopCommand"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#actsUpon"/>
+            <Class IRI="#StartStopState"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StopState"/>
+        <Class IRI="#StartStopState"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Storage"/>
+        <Class IRI="#EnergyRelated"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Switch"/>
+        <Class IRI="#Actuator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SwitchOnService"/>
+        <Class IRI="#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SwitchOnService"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isOfferedBy"/>
+            <Class IRI="#LightSwitch"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SwitchOnService"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#represents"/>
+            <Class IRI="#OnOffFunction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Task"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#isAccomplishedBy"/>
+            <Class IRI="#Device"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#consistsOf"/>
+            <Class IRI="#Sensor"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#SensingFunction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#measuresProperty"/>
+            <Class IRI="#Temperature"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureSensor"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#Comfort"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureUnit"/>
+        <Class IRI="#UnitOfMeasure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Time"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Time"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#consistsOf"/>
+            <Class abbreviatedIRI="time:TemporalEntity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ToggleCommand"/>
+        <Class IRI="#Command"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WashingMachine"/>
+        <Class IRI="#Appliance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WashingMachine"/>
+        <Class IRI="#Load"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WashingMachine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFunction"/>
+            <Class IRI="#StartStopFunction"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WashingMachine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasProfile"/>
+            <Class IRI="#Profile"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WashingMachine"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasState"/>
+            <Class IRI="#StartStopState"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WashingMachine"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#accomplishes"/>
+            <NamedIndividual IRI="#Washing"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Water"/>
+        <Class IRI="#Commodity"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#CloseCommand"/>
+        <Class IRI="#OpenCommand"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#OffCommand"/>
+        <Class IRI="#OnCommand"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#StartCommand"/>
+        <Class IRI="#StopCommand"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#StepDownCommand"/>
+        <Class IRI="#StepUpCommand"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Currency"/>
+        <NamedIndividual abbreviatedIRI="om:United_States_dollar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PressureUnit"/>
+        <NamedIndividual abbreviatedIRI="om:bar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TemperatureUnit"/>
+        <NamedIndividual abbreviatedIRI="om:degree_Celsius"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TemperatureUnit"/>
+        <NamedIndividual abbreviatedIRI="om:degree_Fahrenheit"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Currency"/>
+        <NamedIndividual abbreviatedIRI="om:euro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TemperatureUnit"/>
+        <NamedIndividual abbreviatedIRI="om:kelvin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PowerUnit"/>
+        <NamedIndividual abbreviatedIRI="om:kilowatt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EnergyUnit"/>
+        <NamedIndividual abbreviatedIRI="om:kilowatt_hour"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#IlluminanceUnit"/>
+        <NamedIndividual abbreviatedIRI="om:lux"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PressureUnit"/>
+        <NamedIndividual abbreviatedIRI="om:pascal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Currency"/>
+        <NamedIndividual abbreviatedIRI="om:pound_sterling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PowerUnit"/>
+        <NamedIndividual abbreviatedIRI="om:watt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Device"/>
+        <NamedIndividual IRI="#Access_Controller"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Device"/>
+        <NamedIndividual IRI="#Air_Renewal_System"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Device"/>
+        <NamedIndividual IRI="#Alarm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ActuatingFunction"/>
+        <NamedIndividual IRI="#Allow_Access"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Property"/>
+        <NamedIndividual IRI="#CO2_Level"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Device"/>
+        <NamedIndividual IRI="#CO2_Sensor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#Cleaning"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CloseCommand"/>
+        <NamedIndividual IRI="#Close"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CloseState"/>
+        <NamedIndividual IRI="#Close"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#Comfort"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ActuatingFunction"/>
+        <NamedIndividual IRI="#Deny_Access"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SensingFunction"/>
+        <NamedIndividual IRI="#Detect_Presence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#Drying"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#EnergyEfficiency"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GetCurrentMeterValueCommand"/>
+        <NamedIndividual IRI="#GetCurrentMeterValue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GetMeterDataCommand"/>
+        <NamedIndividual IRI="#GetMeterData"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GetMeterHistoryCommand"/>
+        <NamedIndividual IRI="#GetMeterHistory"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GetSensingDataCommand"/>
+        <NamedIndividual IRI="#GetSensingData"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MeteringFunction"/>
+        <NamedIndividual IRI="#Get_CO2_Level"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SensingFunction"/>
+        <NamedIndividual IRI="#Level_Sensing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#Lighting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#MeterReading"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NotifyCommand"/>
+        <NamedIndividual IRI="#Notify"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OffCommand"/>
+        <NamedIndividual IRI="#Off"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OffState"/>
+        <NamedIndividual IRI="#Off"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OnCommand"/>
+        <NamedIndividual IRI="#On"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OnState"/>
+        <NamedIndividual IRI="#On"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OpenCommand"/>
+        <NamedIndividual IRI="#Open"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OpenState"/>
+        <NamedIndividual IRI="#Open"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PauseCommand"/>
+        <NamedIndividual IRI="#Pause"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Property"/>
+        <NamedIndividual IRI="#Presence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Device"/>
+        <NamedIndividual IRI="#Presence_Detector"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#Safety"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SetAbsoluteLevelCommand"/>
+        <NamedIndividual IRI="#SetAbsoluteLevel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SetRelativeLevelCommand"/>
+        <NamedIndividual IRI="#SetRelativeLevel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StartCommand"/>
+        <NamedIndividual IRI="#Start"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StartState"/>
+        <NamedIndividual IRI="#Start"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ActuatingFunction"/>
+        <NamedIndividual IRI="#Start_Notifications"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StepDownCommand"/>
+        <NamedIndividual IRI="#StepDown"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StepUpCommand"/>
+        <NamedIndividual IRI="#StepUp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StopCommand"/>
+        <NamedIndividual IRI="#Stop"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StopState"/>
+        <NamedIndividual IRI="#Stop"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ActuatingFunction"/>
+        <NamedIndividual IRI="#Stop_Notifications"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ToggleCommand"/>
+        <NamedIndividual IRI="#Toggle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ActuatingFunction"/>
+        <NamedIndividual IRI="#Turn_OFF"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ActuatingFunction"/>
+        <NamedIndividual IRI="#Turn_ON"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#Washing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Task"/>
+        <NamedIndividual IRI="#WellBeing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EnergyUnit"/>
+        <NamedIndividual IRI="#watt_hour"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#Access_Controller"/>
+        <NamedIndividual IRI="#Allow_Access"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#Access_Controller"/>
+        <NamedIndividual IRI="#Deny_Access"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#Air_Renewal_System"/>
+        <NamedIndividual IRI="#Start"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#Air_Renewal_System"/>
+        <NamedIndividual IRI="#Stop"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#Alarm"/>
+        <NamedIndividual IRI="#Turn_OFF"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#Alarm"/>
+        <NamedIndividual IRI="#Turn_ON"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isMeasuredByDevice"/>
+        <NamedIndividual IRI="#CO2_Level"/>
+        <NamedIndividual IRI="#CO2_Sensor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#CO2_Sensor"/>
+        <NamedIndividual IRI="#Get_CO2_Level"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#CO2_Sensor"/>
+        <NamedIndividual IRI="#Level_Sensing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#CO2_Sensor"/>
+        <NamedIndividual IRI="#Start_Notifications"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#CO2_Sensor"/>
+        <NamedIndividual IRI="#Stop_Notifications"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#measuresProperty"/>
+        <NamedIndividual IRI="#CO2_Sensor"/>
+        <NamedIndividual IRI="#CO2_Level"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSensorType"/>
+        <NamedIndividual IRI="#Level_Sensing"/>
+        <NamedIndividual IRI="#CO2_Level"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFunction"/>
+        <NamedIndividual IRI="#Presence_Detector"/>
+        <NamedIndividual IRI="#Detect_Presence"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#measuresProperty"/>
+        <NamedIndividual IRI="#Presence_Detector"/>
+        <NamedIndividual IRI="#Presence"/>
+    </ObjectPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#accomplishes"/>
+        <ObjectProperty IRI="#isAccomplishedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCommand"/>
+        <ObjectProperty IRI="#isCommandOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isOfferedBy"/>
+        <ObjectProperty IRI="#offers"/>
+    </InverseObjectProperties>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasManufacturer"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasModel"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>time:TemporalUnit</AbbreviatedIRI>
+        <Literal>The unit of measure for time</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:United_States_dollar</AbbreviatedIRI>
+        <Literal xml:lang="en">United States dollar</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>om:bar</AbbreviatedIRI>
+        <Literal xml:lang="en">The bar is a unit of pressure defined as 100 000 pascal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:bar</AbbreviatedIRI>
+        <Literal>bar</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>om:degree_Celsius</AbbreviatedIRI>
+        <Literal xml:lang="en">The degree Celsius is a unit of temperature defined as 1 kelvin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:degree_Celsius</AbbreviatedIRI>
+        <Literal>degree Celsius</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>om:degree_Fahrenheit</AbbreviatedIRI>
+        <Literal xml:lang="en">The degree Fahrenheit is a unit of temperature defined as 5.555556e-1 kelvin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:degree_Fahrenheit</AbbreviatedIRI>
+        <Literal>degree Fahrenheit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:euro</AbbreviatedIRI>
+        <Literal xml:lang="en">euro</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>om:kelvin</AbbreviatedIRI>
+        <Literal xml:lang="en">The kelvin is a unit of temperature defined as 1/273.16 of the thermodynamic temperature of the triple point of water.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:kelvin</AbbreviatedIRI>
+        <Literal>kelvin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:kilowatt</AbbreviatedIRI>
+        <Literal>kilowatt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>om:kilowatt_hour</AbbreviatedIRI>
+        <Literal>The kilowatt hour is a unit of energy equal to 1,000 watt-hours, or 3.6 megajoules.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:kilowatt_hour</AbbreviatedIRI>
+        <Literal>kilowatt hour</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>om:lux</AbbreviatedIRI>
+        <Literal xml:lang="en">The lux is a unit of illuminance defined as lumen divided by square metre = candela times steradian divided by square metre.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:lux</AbbreviatedIRI>
+        <Literal>lux</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>om:pascal</AbbreviatedIRI>
+        <Literal xml:lang="en">The pascal is a unit of pressure and stress defined as newton divided by square metre = joule divided by cubic metre = kilogram divided by metre second squared.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:pascal</AbbreviatedIRI>
+        <Literal>pascal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:pound_sterling</AbbreviatedIRI>
+        <Literal>Great Britain pound sterling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>om:watt</AbbreviatedIRI>
+        <Literal xml:lang="en">The watt is a unit of power defined as joule divided by second = newton times metre divided by second = volt times ampere = kilogram times square metre divided by second to the power 3.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>om:watt</AbbreviatedIRI>
+        <Literal>watt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ActuatingFunction</IRI>
+        <Literal>A function that allows to transmit data to actuators, such as level settings (e.g., temperature) or binary switching (e.g., open/close, on/off)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ActuatingFunction</IRI>
+        <Literal>Actuating function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Actuator</IRI>
+        <Literal>A device responsible for moving or controlling a mechanism or system by performing an actuating function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Actuator</IRI>
+        <Literal>Actuator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Appliance</IRI>
+        <Literal>An electrical/mechanical machine that accomplish some household functions, such as cleaning or cooking</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Appliance</IRI>
+        <Literal>Appliance</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BuildingRelated</IRI>
+        <Literal>A category that includes devices as described by building related data models, such as IFC and FIEMSER </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BuildingRelated</IRI>
+        <Literal>Building related</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cleaning</IRI>
+        <Literal>A type of task for which a device is designed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Cleaning</IRI>
+        <Literal>Cleaning</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Close</IRI>
+        <Literal>The value CLOSE. It is used to instantiate different classes such as the CloseCommand class and CloseState class, for example. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Close</IRI>
+        <Literal>Close</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CloseCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CloseCommand</IRI>
+        <Literal>Close command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CloseState</IRI>
+        <Literal>The state of a device that is CLOSE</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CloseState</IRI>
+        <Literal>Close state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Coal</IRI>
+        <Literal>A type of commodity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Coal</IRI>
+        <Literal>Coal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Comfort</IRI>
+        <Literal>A type of task for which a device is designed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Comfort</IRI>
+        <Literal>Comfort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Command</IRI>
+        <Literal>A directive that a device must support to perform a certain function. A command may act upon a state, but does not necessarily act upon a state. For example, the ON command acts upon the ON/OFF state, but the GET command does not act upon any state, it simply gives a directive to retrieve a certain value. We propose here a list of commands that are relevant for the purpose of SAREF, but this list can be extended.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Command</IRI>
+        <Literal>Command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Commodity</IRI>
+        <Literal>A marketable item for which there is demand, but which is supplied without qualitative differentiation across a market. SAREF refers to energy commodities such as electricity, gas, coal and oil. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Commodity</IRI>
+        <Literal>Commodity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Currency</IRI>
+        <Literal>The unit of measure for price</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Currency</IRI>
+        <Literal>Currency</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Device</IRI>
+        <Literal>A tangible object designed to accomplish a particular task in households, common public buildings or offices. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function. Devices can be structured in categories (subclasses) that reflect the different domain in which a device is used, e.g., smart appliances domain (subclass FunctionRelated) vs. building domain (subclass BuildingRelated) vs. smart grid domain (subclass EnergyRelated). New categories can be defined,if needed, to reflect other differences, for example different points of view, such as the point of view of the device&apos;s user vs. the point of view of the device&apos;s manufacturer. We propose a list of devices that are relevant for the purpose of SAREF, but this list can be extended.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Device</IRI>
+        <Literal>Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DoorSwitch</IRI>
+        <Literal>A device of category saref:Actuator that consists of a switch, accomplishes the task saref:Safety, performs the saref:OpenCloseFunction, is used for controlling a door, and can be found in the state saref:OpenCloseState.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DoorSwitch</IRI>
+        <Literal>Door switch</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Drying</IRI>
+        <Literal>A type of task for which a device is designed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Drying</IRI>
+        <Literal>Drying</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Electricity</IRI>
+        <Literal>A type of commodity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Electricity</IRI>
+        <Literal>Electricity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Energy</IRI>
+        <Literal>A saref:Property related to some measurements that are characterized by a certain value measured in an energy unit (such as Kilowatt_Hour or Watt_hour). Furter specializations of the saref:Energy class can be found in the SAREF4ENER extension, where classes such as EnergyMax, EnergyMin and EnergyExpected are defined. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Energy</IRI>
+        <Literal>Energy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnergyEfficiency</IRI>
+        <Literal>A type of task for which a device is designed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EnergyEfficiency</IRI>
+        <Literal>EnergyEfficiency</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnergyMeter</IRI>
+        <Literal>An energy meter is a device of category saref:Meter that consists of a meter, accomplishes the tasks saref:MeterReading and saref:EnergyEfficiency, performs the saref:MeteringFunction and is used for the purpose of measuring the saref:Energy property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EnergyMeter</IRI>
+        <Literal>Energy meter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnergyRelated</IRI>
+        <Literal>A category that considers devices based on energy consumption information and profiles to optimize energy efficiency.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EnergyRelated</IRI>
+        <Literal>Energy related</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnergyUnit</IRI>
+        <Literal>The unit of measure for energy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EnergyUnit</IRI>
+        <Literal>Energy unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Entertainment</IRI>
+        <Literal>A type of task for which a device is designed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Entertainment</IRI>
+        <Literal>Entertainment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EventFunction</IRI>
+        <Literal>A function that allows to notify another device that a certain threshold value has been exceeded.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EventFunction</IRI>
+        <Literal>Event function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Function</IRI>
+        <Literal>The functionality necessary to accomplish the task for which a Device is designed. A device can be designed to perform more than one function. Functions can be structured in categories (subclasses) that reflect different points of view, for example, considering the specific application area for which a function can be used (e.g., light, temperature, motion, heat, power, etc.), or the capability that a function can support (e.g., receive, reply, notify, etc.), and so forth. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Function</IRI>
+        <Literal>Function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FunctionRelated</IRI>
+        <Literal>A category that considers devices, sensors and their specification in terms of functions, states and services</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FunctionRelated</IRI>
+        <Literal>Function related</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Gas</IRI>
+        <Literal>A type of commodity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Gas</IRI>
+        <Literal>Gas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Generator</IRI>
+        <Literal>A type of energy-related device that generates energy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Generator</IRI>
+        <Literal>Generator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GetCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GetCommand</IRI>
+        <Literal>Get command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GetCurrentMeterValue</IRI>
+        <Literal>The command GET CURRENT METER VALUE. It is used to instantiate the GetCurrentMeterValueCommand class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GetCurrentMeterValue</IRI>
+        <Literal>Get current meter value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GetCurrentMeterValueCommand</IRI>
+        <Literal>A type of get command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GetCurrentMeterValueCommand</IRI>
+        <Literal>Get current meter value command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GetMeterData</IRI>
+        <Literal>The command GET METER DATA. It is used to instantiate the GetMeterDataCommand class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GetMeterData</IRI>
+        <Literal>Get meter data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GetMeterDataCommand</IRI>
+        <Literal>A type of get command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GetMeterDataCommand</IRI>
+        <Literal>Get meter data command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GetMeterHistory</IRI>
+        <Literal>The command GET METER HISTORY. It is used to instantiate the GetMeterHistoryCommand class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GetMeterHistory</IRI>
+        <Literal>Get meter history</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GetMeterHistoryCommand</IRI>
+        <Literal>A type of get command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GetMeterHistoryCommand</IRI>
+        <Literal>Get meter history command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GetSensingData</IRI>
+        <Literal>The command GET SENSING DATA. It is used to instantiate the GetSensingDataCommand class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GetSensingData</IRI>
+        <Literal>Get sensing data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GetSensingDataCommand</IRI>
+        <Literal>A type of get command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GetSensingDataCommand</IRI>
+        <Literal>Get sensing data command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HVAC</IRI>
+        <Literal>Heating, Ventilation and Air Conditioning (HVAC) device that provides indoor environmental comfort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HVAC</IRI>
+        <Literal>HVAC</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Humidity</IRI>
+        <Literal>A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Humidity</IRI>
+        <Literal>Humidity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IlluminanceUnit</IRI>
+        <Literal>The unit of measure for light</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#IlluminanceUnit</IRI>
+        <Literal>Illuminance unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LevelControlFunction</IRI>
+        <Literal>An actuating function that allows to do level adjustments of an actuator in a certain range (e.g., 0%-100%), such as dimming a light or set the speed of an electric motor. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LevelControlFunction</IRI>
+        <Literal>Level control function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Light</IRI>
+        <Literal>A saref:Property related to some measurements that are characterized by a certain value that is measured in a illuminance unit (lux)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Light</IRI>
+        <Literal>Light</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LightSwitch</IRI>
+        <Literal>A device of category saref:Actuator that consists of a switch, accomplishes the task saref:Lighting, performs the saref:OnOffFunction, measures the property saref:Light, and can be found in the state saref:OnOffState. It can offer a switch on service.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LightSwitch</IRI>
+        <Literal>Light switch</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Lighting</IRI>
+        <Literal>A type of task for which a device is designed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Lighting</IRI>
+        <Literal>Lighting</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LightingDevice</IRI>
+        <Literal>A device used for illumination, irradiation, signaling, or projection</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LightingDevice</IRI>
+        <Literal>Lighting device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Load</IRI>
+        <Literal>A type of energy-related device that consumes energy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Load</IRI>
+        <Literal>Load</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Measurement</IRI>
+        <Literal xml:lang="en">Represents the measured value made over a property. It is also linked to the unit of measure in which the value is expressed and the timestamp of the measurement.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Measurement</IRI>
+        <Literal xml:lang="en">Measurement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Meter</IRI>
+        <Literal>A device built to accurately detect and display a quantity in a form readable by a human being. Further, a device of category saref:Meter that performs a saref:MeteringFunction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Meter</IRI>
+        <Literal>Meter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MeterReading</IRI>
+        <Literal>A type of task for which a device is designed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MeterReading</IRI>
+        <Literal>Meter reading</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MeteringFunction</IRI>
+        <Literal>A function that allows to get data from a meter, such as current meter reading or instantaneous demand</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MeteringFunction</IRI>
+        <Literal>Metering function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MicroRenewable</IRI>
+        <Literal>A device that generates renewable energy from natural resources such as teh sun, wind and water</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MicroRenewable</IRI>
+        <Literal>Micro renewable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Motion</IRI>
+        <Literal>A saref:Property related to some measurements that are characterized by a certain value that is measured in a unit of measure for motion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Motion</IRI>
+        <Literal>Motion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MultiLevelState</IRI>
+        <Literal>A type of state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MultiLevelState</IRI>
+        <Literal>Multi level state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Multimedia</IRI>
+        <Literal>A device designed to display, store, record or play multimedia content such as audio, images, animation, video </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Multimedia</IRI>
+        <Literal>Multimedia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Network</IRI>
+        <Literal>A device used to connect other devices in a network, such as hub, switch or router in a Local Area Network (LAN). </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Network</IRI>
+        <Literal>Network</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Notify</IRI>
+        <Literal>The value NOTIFY. It is used to instantiate the NotifyCommand.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Notify</IRI>
+        <Literal>Notify</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NotifyCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NotifyCommand</IRI>
+        <Literal>Notify command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Occupancy</IRI>
+        <Literal>A saref:Property related to some measurements that are characterized by a certain value (saref:hasValue property) that is measured in a unit of measure for occupancy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Occupancy</IRI>
+        <Literal>Occupancy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Off</IRI>
+        <Literal>The value OFF. It is used to instantiate different classes such as the OffCommand class and OffState class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Off</IRI>
+        <Literal>Off </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OffCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OffCommand</IRI>
+        <Literal>Off command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OffState</IRI>
+        <Literal>The state of a device that is ON</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OffState</IRI>
+        <Literal>Off state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#On</IRI>
+        <Literal>The value ON. It is used to instantiate different classes such as the OnCommand class and OnState class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#On</IRI>
+        <Literal>On</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OnCommand</IRI>
+        <Literal>On command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnOffFunction</IRI>
+        <Literal>An actuating function that allows to switch on and off an actuator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OnOffFunction</IRI>
+        <Literal>On off function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnOffState</IRI>
+        <Literal>A type of state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OnOffState</IRI>
+        <Literal>On off state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnState</IRI>
+        <Literal>The state of a device that is OFF </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OnState</IRI>
+        <Literal>On state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Open</IRI>
+        <Literal>The value OPEN. It is used to instantiate different classes such as the OpenCommand class and OpenState class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Open</IRI>
+        <Literal>Open</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OpenCloseFunction</IRI>
+        <Literal>An actuating function that allows to open and close a device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OpenCloseFunction</IRI>
+        <Literal>Open close function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OpenCloseState</IRI>
+        <Literal>A type of state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OpenCloseState</IRI>
+        <Literal>Open close state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OpenCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OpenCommand</IRI>
+        <Literal>Open command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OpenState</IRI>
+        <Literal>The state of a device that is OPEN </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OpenState</IRI>
+        <Literal>Open state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Pause</IRI>
+        <Literal>The value PAUSE. It is used to instantiate classes such as the PauseCommand class.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Pause</IRI>
+        <Literal>Pause</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PauseCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PauseCommand</IRI>
+        <Literal>Pause command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Power</IRI>
+        <Literal>A saref:Property related to some measurements that are characterized by a certain value that is measured in a power unit (such as watt or kilowatt).  Further specializations of the saref:Power class can be found in the SAREF4ENER extension, where classes such as PowerMax, PowerMin and PowerExpected are defined.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Power</IRI>
+        <Literal>Power</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PowerUnit</IRI>
+        <Literal>The unit of measure for power</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PowerUnit</IRI>
+        <Literal>Power unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Pressure</IRI>
+        <Literal>A saref:Property related to some measurements that are characterized by a certain value that is measured in a pressure unit (bar or pascal)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Pressure</IRI>
+        <Literal>Pressure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PressureUnit</IRI>
+        <Literal>The unit of measure for pressure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PressureUnit</IRI>
+        <Literal>Pressure unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Price</IRI>
+        <Literal>A saref:Property crelated to some measurements that are characterized by a certain value that is measured using saref:Currency</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Price</IRI>
+        <Literal>Price</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Profile</IRI>
+        <Literal xml:lang="en">A specification associated to a device to collect information about a certain Property (e.g., Energy) or Commodity (e.g.Water) for optimizing its usage in the home, office or building in which the device is located. This specification is about a certain Property or Commodity (saref:isAbout), can be calculated over a time span (saref:hasTime ) and can be associated to some costs (saref:hasPrice). An example is the Power Profile defined in the SAREF4ENER extension that can be associated to a device for optimizing the Energy efficiency in the home, office or building in which the device is located.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Profile</IRI>
+        <Literal xml:lang="en">Profile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Property</IRI>
+        <Literal>Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Property</IRI>
+        <Literal>Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Safety</IRI>
+        <Literal>A type of task for which a device is designed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Safety</IRI>
+        <Literal>Safety</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensingFunction</IRI>
+        <Literal>A function that allows to transmit data from sensors, such as measurement values (e.g., temperature) or sensing data (e.g., occupancy)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SensingFunction</IRI>
+        <Literal>Sensing function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sensor</IRI>
+        <Literal>A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. Further, a device of category saref:Sensor that performs a saref:SensingFunction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Sensor</IRI>
+        <Literal>Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Service</IRI>
+        <Literal>A service is a representation of a function to a network that makes the function discoverable, registerable, remotely controllable by other devices in the network. A service can represent one or more functions. A Service is offered by a device that wants (a certain set of) its function(s) to be discoverable, registerable, remotely controllable by other devices in the network. A Service must specify the device that is offering the service and the function(s) to be represented.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Service</IRI>
+        <Literal>Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SetAbsoluteLevel</IRI>
+        <Literal>The value SET ABSOLUTE LEVEL. It is used to instantiate classes such as the SetAbsoluteLevelCommand class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SetAbsoluteLevel</IRI>
+        <Literal>Set absolute level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SetAbsoluteLevelCommand</IRI>
+        <Literal>A type of set level command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SetAbsoluteLevelCommand</IRI>
+        <Literal>Set absolute level command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SetLevelCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SetLevelCommand</IRI>
+        <Literal>Set level command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SetRelativeLevel</IRI>
+        <Literal>The value SET RELATIVE LEVEL. It is used to instantiate classes such as the SetRelativeLevelCommand class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SetRelativeLevel</IRI>
+        <Literal>Set relative level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SetRelativeLevelCommand</IRI>
+        <Literal>A type of set level command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SetRelativeLevelCommand</IRI>
+        <Literal>Set relative level command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Smoke</IRI>
+        <Literal>A saref:Property related to some measurements that are characterized by a certain value that is measured in a unit of measure for smoke</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Smoke</IRI>
+        <Literal>Smoke</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmokeSensor</IRI>
+        <Literal>A device that consists of a sensor, has category saref:Sensor, performs the saref:SensingFunction and saref:EventFunction (which notifies that a certain threshold has been exceeded), and is used for the purpose of sensing a property of type saref:Smoke.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SmokeSensor</IRI>
+        <Literal>Smoke sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Start</IRI>
+        <Literal>The value START. It is used to instantiate different classes such as the StartCommand class and StartState class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Start</IRI>
+        <Literal>Start</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StartCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StartCommand</IRI>
+        <Literal>Start command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StartState</IRI>
+        <Literal>The state of a device that is STARTED</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StartState</IRI>
+        <Literal>Start state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StartStopFunction</IRI>
+        <Literal>An actuating function that allows to start and stop a device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StartStopFunction</IRI>
+        <Literal>Start stop function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StartStopState</IRI>
+        <Literal>A type of state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StartStopState</IRI>
+        <Literal>Start stop state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#State</IRI>
+        <Literal>The state in which a device can be found, e.g, ON/OFF/STANDBY, or ONLINE/OFFLINE. We propose here a list of states that are relevant for the purpose of SAREF, but this list can be extended.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#State</IRI>
+        <Literal>State</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StepDown</IRI>
+        <Literal>The value STEP DOWN. It is used to instantiate the StepDownCommand class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StepDown</IRI>
+        <Literal>Step down</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StepDownCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StepDownCommand</IRI>
+        <Literal>Step down command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StepUp</IRI>
+        <Literal>The value STEP UP. It is used to instantiate the StepUpCommand class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StepUp</IRI>
+        <Literal>Step up</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StepUpCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StepUpCommand</IRI>
+        <Literal>Step up command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Stop</IRI>
+        <Literal>The value STOP. It is used to instantiate different classes such as the StopCommand class and StopState class. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Stop</IRI>
+        <Literal>Stop</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StopCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StopCommand</IRI>
+        <Literal>Stop command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StopState</IRI>
+        <Literal>The state of a device that is STOPPED</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StopState</IRI>
+        <Literal>Stop state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Storage</IRI>
+        <Literal>A type of energy-related device that stores energy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Storage</IRI>
+        <Literal>Storage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Switch</IRI>
+        <Literal>A device of category saref:Actuator that performs an actuating function of type saref:OnOffFunction or saref:OpenCloseFunction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Switch</IRI>
+        <Literal>Switch</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SwitchOnService</IRI>
+        <Literal>A type of service that represents an on/off function to the network</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SwitchOnService</IRI>
+        <Literal>Switch on service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Task</IRI>
+        <Literal>The goal for which a device is designed (from a user perspective). For example, a washing machine is designed for the task of washing. We propose here a list of tasks that are relevant for the purpose of SAREF, but this list can be extended.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Task</IRI>
+        <Literal>Task</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Temperature</IRI>
+        <Literal>A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Temperature</IRI>
+        <Literal>Temperature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemperatureSensor</IRI>
+        <Literal>A device that consists of a sensor, has category saref:Sensor, performs the saref:SensingFunction and is used for the purpose of sensing a property of type saref:Temperature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TemperatureSensor</IRI>
+        <Literal>Temperature sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemperatureUnit</IRI>
+        <Literal>The unit of measure for temperature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TemperatureUnit</IRI>
+        <Literal>Temperature unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Time</IRI>
+        <Literal>A saref:Property that allows to specify the time concept in terms of instants or intervals according to the imported W3C Time ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Time</IRI>
+        <Literal>Time</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Toggle</IRI>
+        <Literal>The value TOGGLE. It is used to instantiate the the ToggleCommand class</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Toggle</IRI>
+        <Literal>Toggle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ToggleCommand</IRI>
+        <Literal>A type of command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ToggleCommand</IRI>
+        <Literal>Toggle command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UnitOfMeasure</IRI>
+        <Literal>The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called &quot;watt&quot;. Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#UnitOfMeasure</IRI>
+        <IRI>http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UnitOfMeasure</IRI>
+        <Literal>Unit of measure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Washing</IRI>
+        <Literal>A type of task for which a device is designed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Washing</IRI>
+        <Literal>Washing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WashingMachine</IRI>
+        <Literal>A device of category saref:Appliance and saref:Load that accomplishes the task saref:Washing, performs an actuating function of type saref:StartStopFunction, can be found in the state saref:StartStopState, and can have a saref:Profile that characterizes its energy consumption. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#WashingMachine</IRI>
+        <Literal>Washing machine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Water</IRI>
+        <Literal>A type of commodity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Water</IRI>
+        <Literal>Water</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WellBeing</IRI>
+        <Literal>A type of task for which a device is designed</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#WellBeing</IRI>
+        <Literal>WellBeing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#accomplishes</IRI>
+        <Literal>A relationship between a certain entity (e.g., a device) and the task it accomplishes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#accomplishes</IRI>
+        <Literal>accomplishes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#actsUpon</IRI>
+        <Literal>A relationship between a command and a state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#actsUpon</IRI>
+        <Literal>acts upon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#consistsOf</IRI>
+        <Literal>A relationship indicating a composite entity that consists of other entities (e.g., a temperature/humidity sensor that consists of a temperature sensor and a humidity sensor)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#consistsOf</IRI>
+        <Literal>consists of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#controlsProperty</IRI>
+        <Literal xml:lang="en">A relationship specifying the Property that can be controlled by a certain Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#controlsProperty</IRI>
+        <Literal xml:lang="en">controls property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCommand</IRI>
+        <Literal>A relationship between an entity (such as a function) and a command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasCommand</IRI>
+        <Literal>has command</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDescription</IRI>
+        <Literal>A relationship providing a description of an entity (e.g., device)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasDescription</IRI>
+        <Literal>has description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFunction</IRI>
+        <Literal>A relationship identifying the type of function of a device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasFunction</IRI>
+        <Literal>has function</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasManufacturer</IRI>
+        <Literal>A relationship identifying the manufacturer of an entity (e.g., device)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasManufacturer</IRI>
+        <Literal>has manufacturer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMeterReading</IRI>
+        <Literal>A relationship between a metering function and the measurement of the reading</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasMeterReading</IRI>
+        <Literal>has meter reading</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMeterReadingType</IRI>
+        <Literal>A relationship identifying the reading type of a measurement (e.g., Water, Gas, Pressure , Energy , Power, etc.)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasMeterReadingType</IRI>
+        <Literal>has meter reading type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasModel</IRI>
+        <Literal>A relationship identifying the model of an entity (e.g., device)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasModel</IRI>
+        <Literal>has model</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasName</IRI>
+        <Literal>A relationship providing the name of an entity (e.g., device)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasName</IRI>
+        <Literal>has name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPrice</IRI>
+        <Literal>A relationships indentifying the price associated to an entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPrice</IRI>
+        <Literal>has price</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProfile</IRI>
+        <Literal>A relationship associating a profile to a certain entity (e.g., a device)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasProfile</IRI>
+        <Literal>has profile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSensingRange</IRI>
+        <Literal>A relationship between a sensing function and a measurement identifying the range of a sensor detection</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSensingRange</IRI>
+        <Literal>has sensing range </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSensorType</IRI>
+        <Literal>A relationship identifying the sensing type of a sensor detection (i.e., Temperature, Occupancy, Humidity, Motion , Smoke, Pressure, etc.) </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSensorType</IRI>
+        <Literal>has sensor type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasState</IRI>
+        <Literal>A relationship identifying the type of state of a device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasState</IRI>
+        <Literal>has state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasThresholdMeasurement</IRI>
+        <Literal>A relationship associated with an event function to notify that a certain threshold measurement has been exceeded</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasThresholdMeasurement</IRI>
+        <Literal>has threshold measurement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTime</IRI>
+        <Literal>A relationship to associate time information to an entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasTime</IRI>
+        <Literal>has time</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTimestamp</IRI>
+        <Literal xml:lang="en">A relationship stating the timestamp of an entity (e.g. a measurement).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasTimestamp</IRI>
+        <Literal xml:lang="en">has timestamp</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTypicalConsumption</IRI>
+        <Literal>A relationship identifying the typical (energy or power) consumption of a device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasTypicalConsumption</IRI>
+        <Literal>has typical consumption</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasValue</IRI>
+        <Literal>A relationship defining the value of a certain property, e.g., energy or power</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasValue</IRI>
+        <Literal>has value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isAbout</IRI>
+        <Literal xml:lang="en">A relationship identifying what an entity, such as a Profile, is about</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isAbout</IRI>
+        <Literal xml:lang="en">isAbout</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isAccomplishedBy</IRI>
+        <Literal>A relationship indentifying the task accomplished by a certain entity (e.g., a device)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isAccomplishedBy</IRI>
+        <Literal>is accomplished by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isCommandOf</IRI>
+        <Literal>A relationship between a command and a function.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isCommandOf</IRI>
+        <Literal>is command of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isControlledByDevice</IRI>
+        <Literal xml:lang="en">A relationship specifying the devices that can control a certain property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isControlledByDevice</IRI>
+        <Literal>is controlled by device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMeasuredByDevice</IRI>
+        <Literal xml:lang="en">A relationship specifying the devices that can measure a certain property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isMeasuredByDevice</IRI>
+        <Literal>is measured by device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMeasuredIn</IRI>
+        <Literal>A relationship identifying the unit of measure used for a certain entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isMeasuredIn</IRI>
+        <Literal>is measured in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isOfferedBy</IRI>
+        <Literal>A relationship between a service and a device that offers the service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isOfferedBy</IRI>
+        <Literal>is offered by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isUsedFor</IRI>
+        <Literal>A relationship specifying the purpose for which a device is used for (e.g., controlling a Commodity)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isUsedFor</IRI>
+        <Literal>is used for</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#makesMeasurement</IRI>
+        <Literal xml:lang="en">A relation between a device and the measurements it makes. Such measurement will link together the value of the measurement, its unit of measure and the property to which it relates.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#makesMeasurement</IRI>
+        <Literal xml:lang="en">makes measurement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#measuresProperty</IRI>
+        <Literal xml:lang="en">A relationship specifying the Property that can be measured by a certain Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#measuresProperty</IRI>
+        <Literal xml:lang="en">measures property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#offers</IRI>
+        <Literal>A relationship between a device and a service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#offers</IRI>
+        <Literal>offers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#relatesToMeasurement</IRI>
+        <Literal>A relationship between a property and the measurements it relates to</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#relatesToMeasurement</IRI>
+        <Literal xml:lang="en">relates to measurement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#relatesToProperty</IRI>
+        <Literal>A relationship between a measurement and the property it relates to</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#relatesToProperty</IRI>
+        <Literal xml:lang="en">relates to property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#represents</IRI>
+        <Literal>A relationship between a service and a function.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#represents</IRI>
+        <Literal>represents</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#watt_hour</IRI>
+        <Literal>The Watt Hor is a unit of energy equivalent to one watt (1 W) of power expended for one hour (1 h) of time. An energy expenditure of 1 Wh represents 3600 joules </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#watt_hour</IRI>
+        <Literal>watt hour</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
