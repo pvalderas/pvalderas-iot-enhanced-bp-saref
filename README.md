@@ -18,6 +18,6 @@ This architecture includes the following microservice:
 
 This repository is made up of 3 folders that contains the following:
 
-- **SAREFBPCommandPattern**: This folder contains the source code of a Java library that supports the BP microserice in order to implement the Command Pattern. It implementes the communication adapters Command Publisher and Result Listener.
-- **SAREFIoTMicroservice**: This folder contains the source code of a Java library that supports the IoT microservices in order to implement the Command Pattern. It implementes the communication adapters Command Listener and Result Publisher.
-- **SmartLibraryExample**: This folder contains the source code of the implementation of a motivating example: an Smart Library.
+- **SAREFBPCommandPattern**: This folder contains the source code of a Java library that supports the BP microservice in order to implement the Command Pattern. It implements the communication adapters Command Publisher and Result Listener.
+- **SAREFIoTMicroservice**: This folder contains the source code of a Java library that supports the IoT microservices in order to implement the Command Pattern. It implements the communication adapters Command Listener and Result Publisher.
+- **SmartLibraryExample**: This folder contains the implementation of the Smart Library motivating example.
