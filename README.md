@@ -11,13 +11,13 @@ A microservice architecture to support the above-introduced work is described in
 ![architecture](./architecture.jpg "Proposed Architecture") 
 
 This architecture includes the following microservice:
-* **BP microservice**, which is endowed with a BPMN engine that oversees executing IoT-enhanced BPs such as the one presented in Figure 1. In addition, the communication adapters Command Publisher and Result Listener are also deployed into this microservice. These adapters support event-based communication with IoT microservices (presented below). The tasks they perform to achieve this communication are introduced below in more detail. Note that this is an infrastructure microservice that can be used to deploy several IoT-enhanced BPs independently from their domain.
-* An IoT microservice for each IoT device, which supports each SAREF device by implementing a backend that is in charge of managing the interaction with the real device in order to execute operations. This backend is implemented according to the technology used by the device. Two communication adapters are also included in these microservices to support event-based communication with the BP microservice: Command Listener and Result Publisher.
+- **BP microservice**, which is endowed with a BPMN engine that oversees executing IoT-enhanced BPs such as the one presented in Figure 1. In addition, the communication adapters Command Publisher and Result Listener are also deployed into this microservice. These adapters support event-based communication with IoT microservices (presented below). The tasks they perform to achieve this communication are introduced below in more detail. Note that this is an infrastructure microservice that can be used to deploy several IoT-enhanced BPs independently from their domain.
+- An **IoT microservice** for each IoT device, which supports each SAREF device by implementing a backend that is in charge of managing the interaction with the real device in order to execute operations. This backend is implemented according to the technology used by the device. Two communication adapters are also included in these microservices to support event-based communication with the BP microservice: Command Listener and Result Publisher.
 
 # Respository structure
 
 This repository is made up of 3 folders that contains the following:
 
-* SAREFBPCommandPattern: This folder contains the source code of a Java library that supports the BP microserice in order to implement the Command Pattern. It implementes the communication adapters Command Publisher and Result Listener.
-* SAREFIoTMicroservice: This folder contains the source code of a Java library that supports the IoT microservices in order to implement the Command Pattern. It implementes the communication adapters Command Listener and Result Publisher.
-* SmartLibraryExample: This folder contains the source code of the implementation of a motivating example: an Smart Library.
+- **SAREFBPCommandPattern**: This folder contains the source code of a Java library that supports the BP microserice in order to implement the Command Pattern. It implementes the communication adapters Command Publisher and Result Listener.
+- **SAREFIoTMicroservice**: This folder contains the source code of a Java library that supports the IoT microservices in order to implement the Command Pattern. It implementes the communication adapters Command Listener and Result Publisher.
+- **SmartLibraryExample**: This folder contains the source code of the implementation of a motivating example: an Smart Library.
